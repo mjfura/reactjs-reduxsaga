@@ -7,7 +7,12 @@ module.exports = {
         './views/**/*.{js,ts,jsx,tsx}'
     ],
     theme: {
-        extend: {}
+        extend: {
+            colors: {
+                primary: '#C42521',
+                placeholder: '#676767'
+            }
+        }
     },
     plugins: []
 }
