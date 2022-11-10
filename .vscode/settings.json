@@ -11,5 +11,5 @@
         "typescript",
         "typescriptreact"
     ],
-    "cSpell.words": ["imgs"]
+    "cSpell.words": ["imgs", "svgs"]
 }
