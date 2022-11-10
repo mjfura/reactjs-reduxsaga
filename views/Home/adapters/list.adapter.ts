@@ -5,6 +5,7 @@ import { createMovieAdapter } from './movie.adapter'
 export const createListAdapter = (response: ListResponse): List => {
     return {
         total: response.total,
-        movies: response.entries.map(createMovieAdapter)
+        movies: response.entries.map(createMovieAdapter),
+        pages: response.pages
     }
 }

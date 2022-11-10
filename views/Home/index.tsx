@@ -1,6 +1,7 @@
 import Layout from '@/components/layouts'
 import { createListAdapter } from './adapters'
 import Card from './components/Card'
+import Pagination from './components/Pagination'
 import { LIST_MOCK } from './index.mock'
 
 export default function Home() {
@@ -17,6 +18,9 @@ export default function Home() {
                             movie={movie}
                         />
                     ))}
+                </div>
+                <div className="flex justify-center">
+                    <Pagination pages={createListAdapter(LIST_MOCK).pages} />
                 </div>
             </section>
         </Layout>

@@ -16,5 +16,12 @@ export const LIST_MOCK: ListResponse = {
             },
             releaseYear: 1998
         }
+    ],
+    pages: [
+        {
+            active: true,
+            label: '1',
+            url: 'https://miapi.com/api/movies/page?=1'
+        }
     ]
 }
