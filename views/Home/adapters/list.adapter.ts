@@ -6,6 +6,10 @@ export const createListAdapter = (response: ListResponse): List => {
     return {
         total: response.total,
         movies: response.entries.map(createMovieAdapter),
-        pages: response.pages
+        pages: response.links.map(el => ({
+            label: el.label,
+            active: el.active || false,
+            url: el.link
+        }))
     }
 }

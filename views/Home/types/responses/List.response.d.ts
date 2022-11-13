@@ -3,11 +3,11 @@ import { MovieResponse } from './Movie.response'
 export interface ListResponse {
     total: number
     entries: MovieResponse[]
-    pages: [
+    links: [
         {
             label: string
-            url: string
-            active: boolean
+            link: string
+            active?: boolean
         }
     ]
 }

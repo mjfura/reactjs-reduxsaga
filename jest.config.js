@@ -17,7 +17,7 @@ const customJestConfig = {
         '^@/views/(.*)$': '<rootDir>/views/$1',
         '^@/hooks$': '<rootDir>/hooks/index',
         '^@/constants$': '<rootDir>/constants/index',
-        '^@/utilities$': '<rootDir>/utilities/index',
+        '^@/utils$': '<rootDir>/utils/index',
         '^@/config$': '<rootDir>/config/index',
         '^@/__mocks__$': '<rootDir>/__mocks__/index'
     },

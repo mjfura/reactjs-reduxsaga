@@ -9,6 +9,9 @@ const nextConfig = {
                 hostname: 'static.rviewer.io'
             }
         ]
+    },
+    env: {
+        API_URL: process.env.API_URL
     }
 }
 
