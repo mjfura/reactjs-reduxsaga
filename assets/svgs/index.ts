@@ -1,0 +1,6 @@
+export { default as leftArrow } from './left-arrow.svg'
+export { default as logo } from './logo.svg'
+export { default as logoIos } from './logo_ios.svg'
+export { default as logoAndroid } from './logo_play_store.svg'
+export { default as rightArrow } from './right-arrow.svg'
+export { default as search } from './search.svg'

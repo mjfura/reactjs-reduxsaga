@@ -1,6 +1,7 @@
 import { RootState } from '@/types/redux'
 import { Feed } from '@/types/states'
 import { createSlice, PayloadAction } from '@reduxjs/toolkit'
+import { States } from '../states'
 
 export const initialState: Feed = {
     pending: false,
@@ -11,10 +12,10 @@ export const initialState: Feed = {
     page: 1
 }
 export const feedSlice = createSlice({
-    name: 'feed',
+    name: States.Feed,
     initialState,
     reducers: {
-        getFeed: (state, _action: PayloadAction<number>) => {
+        getFeedByPage: (state, _action: PayloadAction<number>) => {
             state.pending = true
         },
         setFeed: (_state, action: PayloadAction<Feed>) => {
@@ -25,6 +26,6 @@ export const feedSlice = createSlice({
         }
     }
 })
-export const { getFeed, clearState, setFeed } = feedSlice.actions
+export const { getFeedByPage, clearState, setFeed } = feedSlice.actions
 export const selectFeed = (state: RootState) => state.feed
 export const feedReducer = feedSlice.reducer

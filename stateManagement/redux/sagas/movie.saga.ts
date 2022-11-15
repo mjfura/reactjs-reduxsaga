@@ -2,7 +2,7 @@ import { createListAdapter } from '@/views/Home/adapters'
 import { getMovies } from '@/views/Home/services'
 import { ListResponse } from '@/views/Home/types/responses'
 import { call, fork, put, takeLatest } from 'redux-saga/effects'
-import { getFeed, setFeed } from '../slices'
+import { getFeedByPage, setFeed } from '../slices'
 function* fetchMovies({ payload }: { payload: number }) {
     try {
         const page = payload
@@ -25,6 +25,6 @@ function* fetchMovies({ payload }: { payload: number }) {
 }
 
 function* movieSaga() {
-    yield takeLatest(getFeed, fetchMovies)
+    yield takeLatest(getFeedByPage, fetchMovies)
 }
 export const movieSagas = [fork(movieSaga)]

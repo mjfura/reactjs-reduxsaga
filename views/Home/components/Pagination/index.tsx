@@ -1,7 +1,7 @@
 import leftArrow from '@/assets/svgs/left-arrow.svg'
 import rightArrow from '@/assets/svgs/right-arrow.svg'
 import { useAppDispatch, useAppSelector } from '@/hooks'
-import { getFeed, selectFeed } from '@/stateManagement/redux/slices'
+import { getFeedByPage, selectFeed } from '@/stateManagement/redux/slices'
 import Image from 'next/image'
 import { Page } from '../../types/models'
 interface Props {
@@ -11,10 +11,10 @@ export default function Pagination({ pages }: Props) {
     const { page } = useAppSelector(selectFeed)
     const dispatch = useAppDispatch()
     const handleClick = (page: number) => {
-        dispatch(getFeed(page))
+        dispatch(getFeedByPage(page))
     }
     return (
-        <nav className="flex gap-4">
+        <nav className="flex gap-4 pt-4">
             {pages.map((el, i) =>
                 el.label === 'previous' && el.url !== null ? (
                     <Image
@@ -44,7 +44,9 @@ export default function Pagination({ pages }: Props) {
                         }}
                         key={i + '-pagination'}
                         className={`${
-                            !el.active ? 'opacity-60' : ''
+                            !el.active
+                                ? 'opacity-60 hover:opacity-80 duration-300 transition-all ease-in-out '
+                                : ''
                         } flex w-8 h-8 cursor-pointer justify-center items-center bg-primary text-white rounded-full`}
                     >
                         {el.label}
