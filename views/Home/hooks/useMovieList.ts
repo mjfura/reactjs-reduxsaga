@@ -4,9 +4,9 @@ import { useEffect } from 'react'
 
 export const useMovieList = () => {
     const dispatch = useAppDispatch()
-    const { pending, movies, pages } = useAppSelector(selectFeed)
+    const { movies, pages, pending } = useAppSelector(selectFeed)
     useEffect(() => {
         dispatch(getFeedByPage(1))
     }, [])
-    return { pending, movies, pages }
+    return { movies, pages, pending }
 }
