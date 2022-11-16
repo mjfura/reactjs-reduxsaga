@@ -2,9 +2,12 @@ import Layout from '@/components/layouts'
 import Card from './components/Card'
 import Pagination from './components/Pagination'
 import { useMovieList } from './hooks'
-
-export default function Home() {
-    const { movies, pages, pending } = useMovieList()
+import { ListResponse } from './types/responses'
+interface Props {
+    list: ListResponse
+}
+export default function Home({ list }: Props) {
+    const { movies, pages, pending } = useMovieList(list)
     return (
         <Layout>
             <section className="min-h-screen px-20 py-4 bg-black">
