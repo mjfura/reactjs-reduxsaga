@@ -1,6 +1,7 @@
 import { Movie } from '../../types/models'
 
 export const MOCK_CARD: Movie = {
+    _id: '1',
     title: 'American History X',
     description:
         'A former neo-nazi skinhead tries to prevent his younger brother from going down the same wrong path that he did.',

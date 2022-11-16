@@ -1,18 +1,13 @@
 import leftArrow from '@/assets/svgs/left-arrow.svg'
 import rightArrow from '@/assets/svgs/right-arrow.svg'
-import { useAppDispatch, useAppSelector } from '@/hooks'
-import { getFeedByPage, selectFeed } from '@/stateManagement/redux/slices'
 import Image from 'next/image'
+import { usePagination } from '../../hooks'
 import { Page } from '../../types/models'
 interface Props {
     pages: Page[]
 }
 export default function Pagination({ pages }: Props) {
-    const { page } = useAppSelector(selectFeed)
-    const dispatch = useAppDispatch()
-    const handleClick = (page: number) => {
-        dispatch(getFeedByPage(page))
-    }
+    const { page, handleClick } = usePagination()
     return (
         <nav className="flex gap-4 pt-4">
             {pages.map((el, i) =>

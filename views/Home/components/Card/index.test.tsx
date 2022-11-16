@@ -6,8 +6,8 @@ describe('Movie Card', () => {
     it('should render correctly', () => {
         render(<Card movie={MOCK_CARD} />)
         const img = screen.getByRole('img')
-        const text = screen.getByText(MOCK_CARD.title)
+        const titles = screen.getAllByText(MOCK_CARD.title)
         expect(img).toBeInTheDocument()
-        expect(text).toBeInTheDocument()
+        expect(titles).toHaveLength(2)
     })
 })

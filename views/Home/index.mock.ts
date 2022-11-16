@@ -4,6 +4,7 @@ export const LIST_MOCK: ListResponse = {
     total: 1,
     entries: [
         {
+            id: 7,
             title: 'American History X',
             description:
                 'A former neo-nazi skinhead tries to prevent his younger brother from going down the same wrong path that he did.',
@@ -17,11 +18,11 @@ export const LIST_MOCK: ListResponse = {
             releaseYear: 1998
         }
     ],
-    pages: [
+    links: [
         {
             active: true,
             label: '1',
-            url: 'https://miapi.com/api/movies/page?=1'
+            link: 'https://miapi.com/api/movies/page?=1'
         }
     ]
 }
