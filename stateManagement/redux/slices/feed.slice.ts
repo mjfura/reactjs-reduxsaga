@@ -15,6 +15,9 @@ export const feedSlice = createSlice({
     name: States.Feed,
     initialState,
     reducers: {
+        searchMovie: (state, _action: PayloadAction<string>) => {
+            state.pending = true
+        },
         getFeedByPage: (state, _action: PayloadAction<number>) => {
             state.pending = true
         },
@@ -26,6 +29,7 @@ export const feedSlice = createSlice({
         }
     }
 })
-export const { getFeedByPage, clearState, setFeed } = feedSlice.actions
+export const { searchMovie, getFeedByPage, clearState, setFeed } =
+    feedSlice.actions
 export const selectFeed = (state: RootState) => state.feed
 export const feedReducer = feedSlice.reducer

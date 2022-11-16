@@ -12,7 +12,7 @@ export default function Home() {
                     Popular Movies
                 </h2>
                 <div
-                    className={`grid grid-cols-auto gap-4 py-4 ${
+                    className={`grid grid-cols-auto place-items-center lg:grid-cols-5 gap-4 py-4 ${
                         pending ? 'animate-pulse' : ''
                     } `}
                 >
